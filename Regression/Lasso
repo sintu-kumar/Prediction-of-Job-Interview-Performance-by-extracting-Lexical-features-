@@ -1,0 +1,52 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Jul  2 15:41:12 2018
+
+@author: sintu
+"""
+
+# Importing the libraries
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+#dataset
+xm = pd.read_excel('features.xlsx')
+x = xm.iloc[:,1:]
+
+#saving accuracy score to the sheet
+import openpyxl
+ws = openpyxl.load_workbook('Top_seven_features.xlsx')
+sheetx = ws.get_sheet_names()
+for k in range(1,20):
+    ym = pd.read_excel('turker_scores.xlsx')
+    y = ym.iloc[0:,k]
+    
+    #splitting the dataset into training and testing set
+    from sklearn.model_selection import train_test_split
+    x_tr,x_ts,y_tr,y_ts = train_test_split(x,y,test_size=0.2)
+    
+    #Fitting the model
+    from sklearn import linear_model
+    lasso = linear_model.Lasso()
+    lasso.set_params(alpha=0.8)
+    lasso.fit(x_tr, y_tr)
+    
+    #Applying K-Folf cross validation on Lasso
+    from sklearn.model_selection import cross_val_score
+    accuracies = cross_val_score(estimator = lasso, X = x_tr, y = y_tr, cv = 5)
+    accuracies.mean()
+    accuracies.std()
+    
+    #saving score to the sheet
+    sheet = ws.get_sheet_by_name(sheetx[k-1])
+    sheet.cell(row=151,column=1,value = 'LASSO')
+    sheet.cell(row=152,column=1,value = 'LASSO-->5 values of accuracy by K fold CV')
+    for i in range(2,7):
+        sheet.cell(row=152,column=i,value =accuracies[i-2])
+    sheet.cell(row=153,column=1,value = 'MeanAccuracies')
+    sheet.cell(row=153,column=2,value =accuracies.mean())
+    sheet.cell(row=154,column=1,value = 'StdAccuracies')
+    sheet.cell(row=154,column=2,value =accuracies.std())
+
+ws.save('Top_seven_features.xlsx')
