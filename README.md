@@ -7,3 +7,13 @@ Prediction of Job Interview Performance by extracting Lexical features.
 * predicts several other high-level personality traits such as engagement, friendliness, and excitement.
 
 One of our objectives is to extend the existing automated conversation systems by providing feedback on the overall interview performance and additional high-level personality traits.
+
+# Dependencies:
+* Numpy
+* Pandas
+* Openpyxl
+* NLTK
+* Matplotlib
+* sklearn
+* Python3
+
