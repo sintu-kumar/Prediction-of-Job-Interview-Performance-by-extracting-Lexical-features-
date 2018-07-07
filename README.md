@@ -24,7 +24,7 @@ Use [pip](https://pypi.org/project/pip/) to install any missing dependencies.
 # Overview:
 **These are step by step process for this project:**
 * We extract 21 feature in dataset and some of them are using Linguistic Inquiry Word Count(LIWC)
-* We calculate Mutual Information of all features for each personality traits.
+* We calculate Mutual Information of all features for each personality traits. `Mutual information (MI) between two random variables is a non-negative value, which measures the dependency between the variables. It is equal to zero if and only if two random variables are independent, and higher values mean higher dependency.`
 * Top seven feature is selected based on Mutual Information for applying Support vector regression(SVR).
-* We also apply Random Forest and Lasso to the dataset. And then apply K-Fold cross validation to all algorithm.
-* We finally calculate accuracy of each model and comapare them. We also compare Lexical features with the prosody features.
+* We also apply Random Forest and Lasso to the dataset. And then apply K-Fold cross validation to all algorithm. `K-Folds cross-validator provides train/test indices to split data in train/test sets. Split dataset into k consecutive folds (without shuffling by default). Each fold is then used once as a validation while the k - 1 remaining folds form the training set.`
+* We finally calculate accuracy of each model and comapare them. We also compare Lexical features with the prosody features for different personalty traits.
