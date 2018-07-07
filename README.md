@@ -6,7 +6,7 @@ Prediction of Job Interview Performance by extracting Lexical features.
 * learns regression models to predict interview ratings and the likelihood of hiring using automatically extracted features.
 * predicts several other high-level personality traits such as engagement, friendliness, and excitement.
 
-One of our objectives is to extend the existing automated conversation systems by providing feedback on the overall interview performance and additional high-level personality traits.
+`The objective of the project is to extract the various lexical features responsible for diﬀerent personality traits and predict scores for various personality traits given a text interview.`
 
 # Dependencies:
 * Numpy
