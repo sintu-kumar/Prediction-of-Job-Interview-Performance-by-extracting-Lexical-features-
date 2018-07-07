@@ -28,3 +28,14 @@ Use [pip](https://pypi.org/project/pip/) to install any missing dependencies.
 * Top seven feature is selected based on Mutual Information for applying Support vector regression(SVR).
 * We also apply Random Forest and Lasso to the dataset. And then apply K-Fold cross validation to all algorithm. `K-Folds cross-validator provides train/test indices to split data in train/test sets. Split dataset into k consecutive folds (without shuffling by default). Each fold is then used once as a validation while the k - 1 remaining folds form the training set.`
 * We finally calculate accuracy of each model and comapare them. We also compare Lexical features with the prosody features for different personalty traits.
+
+
+## Here are some plots of comparison between different algorithm and Lexical features with the prosody features:
+
+`SVR vs Random Forest vs Lasso for NoFiller personality traits:`
+![svr vs rf vs lasso mean_accuracy](https://user-images.githubusercontent.com/29041062/42410400-bab32d6a-8206-11e8-9f0d-d46f58e02e8d.PNG)
+
+
+
+`Lexical features vs prosody features for NoFiller personality traits:`
+![rf_com_nf](https://user-images.githubusercontent.com/29041062/42410505-416a1bec-8208-11e8-89e9-d43c2705962e.PNG)
