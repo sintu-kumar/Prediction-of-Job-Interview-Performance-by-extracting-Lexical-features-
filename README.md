@@ -32,10 +32,12 @@ Use [pip](https://pypi.org/project/pip/) to install any missing dependencies.
 
 ## Here are some plots of comparison between different algorithm and Lexical features with the prosody features:
 
-`SVR vs Random Forest vs Lasso for NoFiller personality traits:`
+`SVR vs Random Forest vs Lasso(respectively) for NoFiller personality traits:`
 ![svr vs rf vs lasso mean_accuracy](https://user-images.githubusercontent.com/29041062/42410400-bab32d6a-8206-11e8-9f0d-d46f58e02e8d.PNG)
 
 
 
 `Lexical features vs prosody features for NoFiller personality traits:`
 ![rf_com_nf](https://user-images.githubusercontent.com/29041062/42410505-416a1bec-8208-11e8-89e9-d43c2705962e.PNG)
+
+##### `You can contact me at: sintucse@gmail.com`
